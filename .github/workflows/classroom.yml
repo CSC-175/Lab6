@@ -1,6 +1,6 @@
 name: Autograding Tests
 'on':
-- workflow_dispatch
+- push
 - repository_dispatch
 permissions:
   checks: write
@@ -32,7 +32,9 @@ jobs:
         test-name: Test 2
         setup-command: g++ Lab6.cpp -o Lab6
         command: "./Lab6"
-        input: '528'
+        input: '528
+
+          '
         expected-output: The sum of the digits is 15
         comparison-method: contains
         timeout: 1
